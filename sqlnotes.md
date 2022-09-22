@@ -17,26 +17,40 @@
     |3|dato3|datoC|
     |4|dato4|datoD|
 * De la tabla anterior el primary key es el ID
+
 <br>
 
-#### **Algunos comandos básicos**
+---
+
+#### **Conceptos útiles**
+* Case insensitive: El lenguaje SQL no distingue entre mayúsculas y inusculas. Pero es común escribirlo en mayúsculas.
+* SQL ignora los espacios y los saltos de línea, pero se recomienda no utilizar saltos de línea ni espacios en blanco de manera innecesaria.
+
+<br>
+
+---
+
+#### **Comandos básicos**
 * ***SHOW DATABASES***: Muestra todas las bases de datos y la estructura de sus tablas.
 * ***SHOW TABLES***: Muestra las tablas de la base de datos seleccionada.
 * ***SHOW COLUMNS FROM [nombre de tabla]***: Muestra los atributos de las columnas de la tabla seleccionada en el siguiente formato.
+<br>
     |FIELD|TYPE|NULL|KEY|DEFAULT|EXTRA|
     |---|---|---|---|---|---|
     |actor_id|smallint unsigned|NO|PRI|NULL|auto_increment|
     |first_name|varchar|NO||NULL||
     |last_name|varchar|NO||NULL||
     |last_update|timestamp|NO||CURRENT_TIMESTAMP|DEFAULT_GENERATE|
+
     * FIELD: Nombre de columna definido por nosotros. 
     * TYPE: Tipo de dato que alberga la colmuna.
-    * NULL: Missing value.
+    * NULL: Missing value. Sin dato alguno.
     * KEY: Indica si la columna esta indexada/enlazada.
     * DEFAULT: Valor por defecto asignado a la columna. 
     * EXTRA: Informacion adicional de la columna.
 
 <br>
 
-* ***SELECT [columna] FROM [tabla]***: Muestra una columna de la tabla seleccionada.
- 
+* ***SELECT [columna1],[columna2],..[columnaX] FROM [tabla]***: Muestra una o varias columnas de la tabla seleccionada.
+    * Tambien puedes usar ***SELECT * FROM [tabla]*** para ver todas las columnas que contiene la tabla.
+
