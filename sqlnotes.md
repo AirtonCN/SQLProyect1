@@ -25,7 +25,6 @@
 * Case insensitive: El lenguaje SQL no distingue entre mayúsculas y inusculas. Pero es común escribirlo en mayúsculas.
 * SQL ignora los espacios y los saltos de línea, pero se recomienda no utilizar saltos de línea ni espacios en blanco de manera innecesaria.
 
-<br>
 
 ---
 
@@ -106,4 +105,37 @@
     ```
     * Este ultimo query es lo mismo que el anterior.
     
+---
+
+* ***ORDER BY***: Ordena numérica o alfabéticamente los resultados de la tabla.
+    ```SQL
+    SELECT * FROM `city` ORDER BY `Name`;
+    ```
+    * El query anterior muestra la tabla city con los nombres de las ciudades ordenados de manera alfabética.
+    * Por defecto los resultados se muestran en orden ascendente.
+    ```SQL
+    SELECT * FROM `city` ORDER BY `Name`,`CountryCode`;
+    ```
+    * El query anterior ordena por nombre y luego por CountryCode, util si por ejemplo tenemos dos ciudades con el mismo nombre, las diferenciariamos por su countrycode.
+    * Notese que el comando ***ORDER BY*** en la misma secuencia en la que escribimos sus argumentos.
+
+
+
+---
+
+
+---
+---
+### Anexos sobre sintaxis
+* Nombres completamente calificados: Es una forma de escribir la sintaxis en sql, por ejemplo.
+    ```SQL
+    SELECT city.id FROM city;
+    ```
+    * Es o mismo que.
+    ```SQL
+    SELECT id FROM city;
+    ```
+    * Se define la tabla luego el punto y la columna, esa es la principal diferencia.
+    * Esto es bastante útil cuando se trabaja con diferentes tablas que contienten o utilizan las mismas columnas.
+* El punto y coma (**;**): Se utiliza para escribir varios querys en un solo script, muy util para ejecutarlos uno por uno  .
 
