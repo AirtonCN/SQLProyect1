@@ -3,6 +3,8 @@
 SHOW DATABASES;
 /*muestra las tablas de la db seleccionada*/
 SHOW TABLES;
+/*Muestra filas donde el valor de countrycode son distintos entre si*/
+SELECT DISTINCT `CountryCode` FROM city;
 /*muestra las columnas de la tabla seleccionada*/
 SHOW COLUMNS FROM city;
 /*muestra la columna ID de la tabla city*/

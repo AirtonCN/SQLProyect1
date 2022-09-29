@@ -77,11 +77,11 @@
 
 * ***DISTINCT***: Muestra valores que no se repiten en la columna que seleccionemos, por ejemplo el código:
     ```SQL
-    SHOW DISTINCT Population FROM city;
+    SELECT DISTINCT Population FROM city;
     ```
     *  Esto hace que se seleccione la columna poblacion y solo se muestren los resultados diferentes entre si.
     ```SQL
-    SHOW DISTINCT Population, Name FROM city;
+    SELECT DISTINCT Population, Name FROM city;
     ```
     * El query anterior hace lo mismo con la columna population y name. **Sin embargo si todos los registros de alguna de las columnas son distintos, entonces se mostraran todos los de la misma y de la otra columna también.**
 
@@ -119,9 +119,57 @@
     * El query anterior ordena por nombre y luego por CountryCode, util si por ejemplo tenemos dos ciudades con el mismo nombre, las diferenciariamos por su countrycode.
     * Notese que el comando ***ORDER BY*** en la misma secuencia en la que escribimos sus argumentos.
 
+---
 
+* ***WHERE***: Permite seleccionar una fila de acuerdo al parámetro que nosotros establecemos.
+    * Sintaxis: ***SELECT [columna] FROM [tabla] WHERE [columna]=[valor]***
+    ```SQL
+    SELECT * FROM `tabla1` WHERE `ID` = 5;
+    ```
+    * Este query permite elegir aquella columna de la tabla1 donde se cumpla que el valor ID sea 5.
+    * Tambien se pueden usar carácteres no numéricos como argumento. 
+    * Para introducir valores textuales como argumento es necesario poner entrecomillas dobles o simples el argumento para que sea leído com un string.
+    ```SQL
+    SELECT * FROM `tabla1` WHERE `Name` = "Seatle";
+    ```
+    * Muestra la fila que coincida con el nombre especifiacdo de la columna name.
 
 ---
+
+* ***BETWEEN***: Este comando es un operador mas que funciona en complemento con WHERE, a continuacion se muestra su sintaxis.
+    * Sirve para poder seleccionar un rango de alguna columna que contenga carácteres numéricos.
+    * Sintaxis: ***SELECT [columna] FROM [tabla] WHERE [columna] BETWEEN [valor1] AND [valor2]***
+    ```SQL
+    SELECT * FROM tabla1 WHERE ID BETWEEN 3 AND 5
+    ```
+    * Muestra las filas donde el valor de id esta entre 3 y 5.
+    * El primero valor debe ser obligatoriamente menor al segundo, de lo contrario no se ejecutara el query.
+
+---
+
+* ***AND OR NOT IN***: Operadores lógicos que permitiarn un filtrado mas selectivo en las tablas.
+    * Sintaxis AND OR: ***SELECT [columna] FROM [tabla] WHERE [expresion1] AND/OR [expresion2]***
+    ```SQL
+    SELECT * FROM `city` WHERE `ID` >= 8 AND `ID` <= 15 ;
+    ```
+    * El query muestra filas donde el valor de ID este entre 8 y 15.
+    ```SQL
+    SELECT * FROM `city` WHERE `ID` <=20 AND `CountryCode`='NLD'; 
+    ```
+    * El query Muestra las primeras 20 ciudades cuyo codigo es nld.
+    ```SQL
+    SELECT * FROM `city` WHERE `CountryCode` = 'NLD' OR `CountryCode` = 'ALB';
+    ```
+    * Muestra columnas donde el countrycode es nld o alb.
+    ```SQL
+    SELECT * FROM `city` WHERE `ID` <= 8 OR `ID` >= 20;
+    ```
+    * Omite valores entre 8 y 20.
+    ```SQL
+    SELECT * FROM `city` WHERE `ID` >=20 AND (`CountryCode`='NLD' OR `CountryCode`='ALB'); 
+    ```
+    * Este es una combinacion de and y or donde se selecciona id mayor a 20 y codigos iguales a nld o alb.
+
 
 
 ---
@@ -137,5 +185,24 @@
     ```
     * Se define la tabla luego el punto y la columna, esa es la principal diferencia.
     * Esto es bastante útil cuando se trabaja con diferentes tablas que contienten o utilizan las mismas columnas.
-* El punto y coma (**;**): Se utiliza para escribir varios querys en un solo script, muy util para ejecutarlos uno por uno  .
+* El punto y coma (**;**): Se utiliza para escribir varios querys en un solo script, muy util para ejecutarlos uno por uno .
+* Operadores en SQL, a contnuacion se muestra una tabla con los operadores que se pueden utilizar con comandos que los admitan.
 
+    |Operador|Descripción|
+    |---|---|
+    |=|Igual que|
+    |!=|Diferente de|
+    |>|Mayor que|
+    |<|Menor que|
+    |>=|Mayor o igual que|
+    |<=|Menor o igual que|
+    |BETWEEN|Ddentro de un rango especifico|
+    
+    * Con ello podemos filtrar resultados de nuestra tabla o buscar alguna fila en especifico entre muchas otras aplicaciones.
+* Operadores logicos de SQL.
+    |Operador|Descripción|
+    |---|---|
+    |AND|Es verdadero si ambas expresiones son iguales.|
+    |OR|Verdadero si al menos una de las expresiones son correctas.|
+    |IN|Igual si un operando es igual a alguno de una lista de expresiones.|
+    |NOT|Retorna un valor verdadero si una expresion no lo es.|
