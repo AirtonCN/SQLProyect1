@@ -29,20 +29,20 @@
 ---
 
 #### **Comandos básicos**
-* ***SHOW DATABASES***: Muestra todas las bases de datos y la estructura de sus tablas.
+1. ***SHOW DATABASES***: Muestra todas las bases de datos y la estructura de sus tablas.
     ```SQL
     SHOW DATABASES;
     ```
 
 ---
 
-* ***SHOW TABLES***: Muestra las tablas de la base de datos seleccionada.
+2. ***SHOW TABLES***: Muestra las tablas de la base de datos seleccionada.
     ```SQL
     SHOW TABLES;
     ```
 ---
 
-* ***SHOW COLUMNS FROM [nombre de tabla]***: Muestra los atributos de las columnas de la tabla seleccionada en el siguiente formato.
+3. ***SHOW COLUMNS FROM [nombre de tabla]***: Muestra los atributos de las columnas de la tabla seleccionada en el siguiente formato.
     ```SQL
     SHOW COLUMNS FROM [nombre de tabla];
     ```
@@ -66,7 +66,7 @@
 
 ---
 
-* ***SELECT [columna1],[columna2],..[columnaX] FROM [tabla]***: Muestra una o varias columnas de la tabla seleccionada.
+4. ***SELECT [columna1],[columna2],..[columnaX] FROM [tabla]***: Muestra una o varias columnas de la tabla seleccionada.
     * Tambien puedes usar ***SELECT * FROM [tabla]*** para ver todas las columnas que contiene la tabla.
     ```SQL
     SELECT [columna1],[columna2],..[columnaX] FROM [tabla];
@@ -75,7 +75,7 @@
 
 ---
 
-* ***DISTINCT***: Muestra valores que no se repiten en la columna que seleccionemos, por ejemplo el código:
+5. ***DISTINCT***: Muestra valores que no se repiten en la columna que seleccionemos, por ejemplo el código:
     ```SQL
     SELECT DISTINCT Population FROM city;
     ```
@@ -87,7 +87,7 @@
 
 ---
 
-* ***LIMIT***: Permite mostrar cierta cantidad de resultados de una tabla en vez de todos. Query ejemplo:
+6. ***LIMIT***: Permite mostrar cierta cantidad de resultados de una tabla en vez de todos. Query ejemplo:
     ```SQL
     SELECT lista FROM tabla1 LIMIT 5;
     ```
@@ -95,7 +95,7 @@
 
 ---
 
-* ***OFFSET***: Permite elegir desde donde empezará a mostrarse las filas, junto al comando ***LIMIT***. Ejemplo:
+7. ***OFFSET***: Permite elegir desde donde empezará a mostrarse las filas, junto al comando ***LIMIT***. Ejemplo:
     ```SQL
     SELECT columna1 FROM tabla1 LIMIT 5 OFFSET 4; 
     ```
@@ -107,7 +107,7 @@
     
 ---
 
-* ***ORDER BY***: Ordena numérica o alfabéticamente los resultados de la tabla.
+8. ***ORDER BY***: Ordena numérica o alfabéticamente los resultados de la tabla.
     ```SQL
     SELECT * FROM `city` ORDER BY `Name`;
     ```
@@ -121,7 +121,7 @@
 
 ---
 
-* ***WHERE***: Permite seleccionar una fila de acuerdo al parámetro que nosotros establecemos.
+8. ***WHERE***: Permite seleccionar una fila de acuerdo al parámetro que nosotros establecemos.
     * Sintaxis: ***SELECT [columna] FROM [tabla] WHERE [columna]=[valor]***
     ```SQL
     SELECT * FROM `tabla1` WHERE `ID` = 5;
@@ -136,7 +136,7 @@
 
 ---
 
-* ***BETWEEN***: Este comando es un operador mas que funciona en complemento con WHERE, a continuacion se muestra su sintaxis.
+8. ***BETWEEN***: Este comando es un operador mas que funciona en complemento con WHERE, a continuacion se muestra su sintaxis.
     * Sirve para poder seleccionar un rango de alguna columna que contenga carácteres numéricos.
     * Sintaxis: ***SELECT [columna] FROM [tabla] WHERE [columna] BETWEEN [valor1] AND [valor2]***
     ```SQL
@@ -147,7 +147,7 @@
 
 ---
 
-* ***AND OR NOT IN***: Operadores lógicos que permitiarn un filtrado mas selectivo en las tablas.
+8. ***AND OR NOT IN***: Operadores lógicos que permitiarn un filtrado mas selectivo en las tablas.
     * Sintaxis AND OR: ***SELECT [columna] FROM [tabla] WHERE [expresion1] AND/OR [expresion2]***
     ```SQL
     SELECT * FROM `city` WHERE `ID` >= 8 AND `ID` <= 15 ;
@@ -196,9 +196,11 @@
     |<|Menor que|
     |>=|Mayor o igual que|
     |<=|Menor o igual que|
-    |BETWEEN|Ddentro de un rango especifico|
+    |BETWEEN|Dentro de un rango especifico|
     
     * Con ello podemos filtrar resultados de nuestra tabla o buscar alguna fila en especifico entre muchas otras aplicaciones.
+    
+    </br>
 * Operadores logicos de SQL.
     |Operador|Descripción|
     |---|---|
