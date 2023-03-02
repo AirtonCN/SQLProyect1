@@ -123,6 +123,10 @@
         ```SQL
         SELECT * FROM `city` ORDER BY `Name`,`CountryCode`;
         ```
+    * Para mostrar resultados en orden descendente se somplemente con ***DESC*** al final
+        ```SQL
+        SELECT * FROM `city` ORDER BY `ID` DESC;
+        ```
     * El query anterior ordena por nombre y luego por CountryCode, util si por ejemplo tenemos dos ciudades con el mismo nombre, las diferenciariamos por su countrycode.
     * Notese que el comando ***ORDER BY*** en la misma secuencia en la que escribimos sus argumentos.
 
@@ -198,6 +202,8 @@
         SELECT * FROM `city` WHERE `Name` NOT IN ('Doha','New York','Chicago')
         ```
     * Este ultimo query muestra los paises que no se encuentran en la lista.
+    * ***WHERE NOT*** este comando tambien comprueba y lista si la columna seleccionada contiene cero.
+
 
 ---
 ---

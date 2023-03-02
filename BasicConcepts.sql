@@ -1,4 +1,10 @@
 /*Para ejecutar un query a la vez CTRL+ENTER, en workbench*/
+/*crea una base de datos*/
+CREATE DATABASE IF NOT EXISTS nombre;
+/*borra la base de datos MUY PEGRILOSO*/
+DROP DATABASE nombre;
+/*selecciona la base de datos*/
+USE nombre;
 /*muestra todas las db*/
 SHOW DATABASES;
 /*muestra las tablas de la db seleccionada*/
@@ -26,5 +32,7 @@ SELECT ID FROM city LIMIT 4,5;
 SELECT city.ID FROM city;
 /*ordena alfabeticamente o numericamente las columnas que deseemos*/
 SELECT `ID` FROM city ORDER BY `ID`;
+/*ordena por ID pero en orden descendente*/
+SELECT * FROM `city` ORDER BY `ID` DESC;
 /*ordena respetando primero el orden de name y luego de countrycode*/
 SELECT * FROM `city` ORDER BY `Name`,`CountryCode`;
