@@ -8,13 +8,18 @@ SELECT DISTINCT `CountryCode` FROM city;
 /*muestra las columnas de la tabla seleccionada*/
 SHOW COLUMNS FROM city;
 /*muestra la columna ID de la tabla city*/
-SELECT `ID`,`Name` FROM city;
+SELECT `ID` FROM city;
+SELECT `ID`, `Name`, `Population` FROM city;
 /*muestra todas las columnasde la tabla city*/
 SELECT * FROM city;
 /*muestra la columna District de la tabla city*/ 
-SELECT District FROM city;
+SELECT `District` FROM city;
+/*muestra valores distintos de la columna que deseemos*/
+SELECT DISTINCT `CountryCode` FROM city;
+/*muestra 5 resultados de la columna id*/
+SELECT `ID` FROM City LIMIT 5;
 /*muestra 5 filas de la columa id de la tabla city empezando desde la 5*/
-SELECT ID FROM city LIMIT 5 OFFSET 4;
+SELECT `ID` FROM city LIMIT 5 OFFSET 4;
 /*hace lo mismo que el query anterior*/
 SELECT ID FROM city LIMIT 4,5;
 /*muestra la columna id de la tabla city pero en otra sintaxis*/
